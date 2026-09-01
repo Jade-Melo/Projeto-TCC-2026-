@@ -2,4 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="app_background">#FFFFFF</color>
+    <color name="app_text_primary">#000000</color>
+    <color name="app_text_secondary">#6A6A6A</color>
+    <color name="app_text_highlight">#282828</color>
+
+    <color name="app_button_green">#598C53</color>
+    <color name="app_button_text">#FFFFFF</color>
+
+    <color name="social_button_background">#F4EDEDFF</color>
+    <color name="social_button_text">#000000</color>
+    <color name="social_button_stroke">#D0D0D0</color>
+
+    <color name="apple_logo_color">#000000</color>
+    <color name="app_edit_text">#FFFFFF</color>
 </resources>

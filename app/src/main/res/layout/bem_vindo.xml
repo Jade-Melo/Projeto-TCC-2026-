@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="235dp"
+        android:layout_height="235dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/image1logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bem vindo ao aplicativo"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/app_text_primary"
+        android:gravity="center"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entrar"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/app_button_green"
+        android:textColor="@color/app_button_text"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/app_button_green"
+        android:textColor="@color/app_button_text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ou"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/app_text_secondary"
+        android:gravity="center"
+        android:layout_marginTop="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Continuar com o Google"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textSize="14sp"
+        android:textColor="@color/social_button_text"
+        android:backgroundTint="@color/social_button_background"
+        app:cornerRadius="8dp"
+        app:icon="@drawable/google_logo"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#F4EDEDFF"
+        android:clickable="true"
+        android:focusable="true"
+        app:iconTint="@null"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Continuar com a Apple"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textSize="14sp"
+        android:textColor="@color/social_button_text"
+        android:backgroundTint="@color/social_button_background"
+        app:cornerRadius="8dp"
+        app:icon="@drawable/apple_logo"
+        app:iconGravity="textStart"
+        app:iconPadding="9dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="#F4EDEDFF"
+        android:clickable="true"
+        android:focusable="true"
+        app:iconTint="@null"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ao clicar em cadastrar, você concorda com os nossos"
+        android:textSize="12sp"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textColor="@color/app_text_secondary"
+        android:gravity="center"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/textTermos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Termos de Serviço e com a Política de Privacidade."
+        android:textSize="12sp"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textStyle="bold"
+        android:textColor="@color/app_text_highlight"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</LinearLayout>

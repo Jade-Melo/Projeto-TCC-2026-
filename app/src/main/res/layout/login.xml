@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="235dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/image1logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/app_text_primary"
+        android:gravity="center"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informe seus dados para acessar sua conta."
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textSize="15sp"
+        android:textColor="@color/app_text_primary"
+        android:gravity="center"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/app_text_primary"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"/>
+
+   <EditText
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="25dp"
+       android:layout_marginEnd="20dp"
+       android:text="Digite seu email"
+       android:textColor="@color/app_edit_text"
+       android:padding="10dp"
+       android:background="@drawable/edit_text_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Senha"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/app_text_primary"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="20dp"
+        android:text="Digite sua senha"
+        android:textColor="@color/app_edit_text"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_background"/>
+
+    <TextView
+        android:id="@+id/esqueciSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Esqueceu a senha?"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/app_text_secondary"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entrar"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="18dp"
+        android:backgroundTint="@color/app_button_green"
+        android:textColor="@color/app_button_text"/>
+
+</LinearLayout>

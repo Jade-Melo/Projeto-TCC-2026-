@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="app_background">#121212</color>
+    <color name="app_text_primary">#FFFFFF</color>
+    <color name="app_text_secondary">#BDBDBD</color>
+    <color name="app_text_highlight">#FFFFFF</color>
+    <color name="app_button_green">#598C53</color>
+    <color name="app_button_text">#FFFFFF</color>
+    <color name="social_button_background">#242424</color>
+    <color name="social_button_text">#FFFFFF</color>
+    <color name="social_button_stroke">#555555</color>
+
+    <color name="apple_logo_color">#FFFFFF</color>
+    <color name="app_edit_text">#FFFFFF</color>
+</resources>
