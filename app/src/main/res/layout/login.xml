@@ -56,7 +56,7 @@
        android:layout_marginStart="25dp"
        android:layout_marginEnd="20dp"
        android:text="Digite seu email"
-       android:textColor="@color/app_edit_text"
+       android:textColor="@color/social_button_stroke"
        android:padding="10dp"
        android:background="@drawable/edit_text_background"/>
 
@@ -78,7 +78,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="20dp"
         android:text="Digite sua senha"
-        android:textColor="@color/app_edit_text"
+        android:textColor="@color/social_button_stroke"
         android:padding="10dp"
         android:background="@drawable/edit_text_background"/>
 
