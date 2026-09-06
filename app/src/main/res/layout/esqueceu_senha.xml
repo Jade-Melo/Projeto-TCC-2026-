@@ -11,7 +11,7 @@
 
     <ImageView
         android:layout_width="235dp"
-        android:layout_height="220dp"
+        android:layout_height="235dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:scaleType="fitCenter"
@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login "
+        android:text="Esqueci minha senha"
         android:fontFamily="@font/inter_18pt_regular"
         android:textStyle="bold"
         android:textSize="25sp"
@@ -31,12 +31,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Informe seus dados para acessar sua conta."
+        android:text="Confirme seu email para enviarmos \no código de verificação."
         android:fontFamily="@font/inter_18pt_regular"
         android:textSize="15sp"
         android:textColor="@color/app_text_primary"
         android:gravity="center"
         android:layout_marginTop="5dp"/>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -50,64 +51,28 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"/>
 
-   <EditText
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_marginStart="25dp"
-       android:layout_marginEnd="20dp"
-       android:text="Digite seu email"
-       android:textColor="@color/social_button_stroke"
-       android:padding="10dp"
-       android:background="@drawable/edit_text_background"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Senha"
-        android:fontFamily="@font/inter_18pt_regular"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:textColor="@color/app_text_primary"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="5dp"/>
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="20dp"
-        android:text="Digite sua senha"
+        android:text="Digite seu email"
         android:textColor="@color/social_button_stroke"
         android:padding="10dp"
         android:background="@drawable/edit_text_background"/>
 
-    <TextView
-        android:id="@+id/esqueciSenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Esqueceu a senha?"
-        android:fontFamily="@font/inter_18pt_regular"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:textColor="@color/app_text_primary"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:clickable="true"
-        android:focusable="true"/>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Entrar"
+        android:text="Continue"
         android:textSize="18sp"
         app:cornerRadius="8dp"
         android:fontFamily="@font/inter_18pt_medium"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="25dp"
         android:backgroundTint="@color/app_button_green"
         android:textColor="@color/app_button_text"/>
+
 
 </LinearLayout>
