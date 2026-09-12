@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/menu_1" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="75dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="15dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/images1logo" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:drawableStart="@drawable/icon_home"
+                android:drawablePadding="4dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/inter_18pt_medium"
+                android:textColor="@color/app_text_primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Histórico"
+                android:drawableStart="@drawable/history_icon"
+                android:drawablePadding="4dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/inter_18pt_medium"
+                android:textColor="@color/app_text_primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Evolução"
+                android:drawableStart="@drawable/baseline_person_outline_24"
+                android:drawablePadding="4dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/inter_18pt_medium"
+                android:textColor="@color/app_text_primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monte seu prato"
+                android:drawableStart="@drawable/food_restaurant_icon"
+                android:drawablePadding="4dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/inter_18pt_medium"
+                android:textColor="@color/app_text_primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conecte a Balança"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/inter_18pt_medium"
+                android:textColor="@color/app_text_primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/inter_18pt_medium"
+                android:textColor="@color/app_text_primary"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/banner" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sobre nós"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/app_text_primary"
+        android:layout_marginTop="3dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next Health"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:layout_marginStart="15dp"
+        android:layout_gravity="start|center_vertical"
+        android:textColor="@color/app_text_secondary"
+        android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Somos uma startup dedicada ao desenvolvimento \ndo Balance Tech, uma solução que busca contribuir \npara a redução das taxas de obesidade por meio do incentivo a hábitos alimentares mais saudáveis. \nUtilizando tecnologias inovadoras, como a integração \nentre hardware (balança) e software (aplicativo) \natravés do Arduino, o Balance Tech promove o monitoramento da alimentação, estimula escolhas conscientes e incentiva uma melhor \nqualidade de vida."
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textSize="14sp"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/app_text_primary"
+        android:layout_marginTop="3dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/instagram_logo"
+        android:layout_gravity="start|center_vertical" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nexthealth_05"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="3dp"
+        android:textColor="@color/app_text_primary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/linkedin_icon"
+            android:layout_gravity="start|center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nexthealthtech"
+            android:fontFamily="@font/inter_18pt_medium"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="3dp"
+            android:textColor="@color/app_text_primary" />
+    </LinearLayout>
+
+</LinearLayout>
