@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/images1logo" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="center"
+        android:text="Vamos conhecer você!"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <!-- CAMPO: GÊNERO -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="Gênero:"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+        android:textSize="18sp" />
+
+
+    <Spinner
+        android:id="@+id/spinnerGenero"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/edit_text_background"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp" />
+
+
+    <!-- CAMPO: IDADE -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:text="Idade:"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/editIdade"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Digite sua idade"
+        android:inputType="number"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+        android:textSize="18sp" />
+
+
+    <!-- CAMPO: PESO -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:text="Peso"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/editPeso"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Digite seu peso em quilogramas(kg)"
+        android:inputType="numberDecimal"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+        android:textSize="18sp" />
+
+
+    <!-- CAMPO: ALTURA -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:text="Altura"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/editAltura"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Digite sua altura em centimetros(cm)"
+        android:inputType="number"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+
+        android:textSize="18sp" />
+
+
+    <!-- BOTÃO CONTINUE -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/app_button_green"
+        android:textColor="@color/app_button_text"/>
+        />
+
+
+
+</LinearLayout>
+
