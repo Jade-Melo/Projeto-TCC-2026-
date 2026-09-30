@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BalanceTech_TCC_Equipe05"
+rootProject.name = "BalanceTech"
 include(":app")

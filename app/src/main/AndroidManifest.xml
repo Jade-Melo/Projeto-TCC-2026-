@@ -13,6 +13,8 @@
         android:theme="@style/Theme.BalanceTech_TCC_Equipe05">
 
         <activity android:name=".LoginActivity" />
+        <activity android:name=".SobreNós" android:exported="false" />
+
         <activity
             android:name=".EsqueceuSenha" />
         <activity
