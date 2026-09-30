@@ -11,12 +11,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:orientation="horizontal">
 
         <ImageView
             android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:layout_gravity="start|center_vertical"
             android:layout_marginStart="12dp"
             android:scaleType="fitCenter"
@@ -29,7 +29,7 @@
 
         <ImageView
             android:layout_width="50dp"
-            android:layout_height="75dp"
+            android:layout_height="85dp"
             android:layout_gravity="end"
             android:layout_marginEnd="15dp"
             android:scaleType="fitCenter"
@@ -90,6 +90,8 @@
                 android:layout_height="wrap_content"
                 android:text="Conecte a Balança"
                 android:layout_marginEnd="18dp"
+                android:drawableStart="@drawable/conect_icon"
+                android:drawablePadding="4dp"
                 android:fontFamily="@font/inter_18pt_medium"
                 android:textColor="@color/app_text_primary"/>
 
@@ -97,9 +99,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Perfil"
+                android:drawableStart="@drawable/baseline_person_outline_24"
+                android:drawablePadding="4dp"
                 android:layout_marginEnd="18dp"
                 android:fontFamily="@font/inter_18pt_medium"
                 android:textColor="@color/app_text_primary"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sobre nós"
+                    android:drawableStart="@drawable/groups_icon"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/inter_18pt_medium"
+                    android:textColor="@color/app_text_primary"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/app_button_green"/>
+            </LinearLayout>
+
         </LinearLayout>
     </HorizontalScrollView>
 
