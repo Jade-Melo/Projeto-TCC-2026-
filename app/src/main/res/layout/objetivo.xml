@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="230dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/images1logo"
+        android:scaleType="fitCenter"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="center"
+        android:text="Qual o seu objetivo ?"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+        android:textSize="18sp" />
+
+    <!-- Opção 1: Perder peso -->
+    <android.widget.Button
+        android:id="@+id/btnPerderPeso"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#95CE79"
+        android:gravity="center_vertical|start"
+        android:paddingStart="20dp"
+        android:text="Perder peso"
+        android:textAllCaps="false"
+        android:background="@drawable/edit_text_background"
+        android:textSize="16sp" />
+
+    <!-- Opção 2: Ganhar músculo -->
+    <android.widget.Button
+        android:id="@+id/btnGanharMusculo"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#95CE79"
+        android:gravity="center_vertical|start"
+        android:paddingStart="20dp"
+        android:text="Ganhar músculo"
+        android:textAllCaps="false"
+        android:background="@drawable/edit_text_background"
+        android:textSize="16sp" />
+
+    <!-- Opção 3: Manter peso -->
+    <android.widget.Button
+        android:id="@+id/btnManterPeso"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#95CE79"
+        android:gravity="center_vertical|start"
+        android:paddingStart="20dp"
+        android:text="Manter peso"
+        android:textAllCaps="false"
+        android:background="@drawable/edit_text_background"
+        android:textSize="16sp" />
+
+    <!-- Opção 4: Comer mais saudável -->
+    <android.widget.Button
+        android:id="@+id/btnComerSaudavel"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#95CE79"
+        android:gravity="center_vertical|start"
+        android:paddingStart="20dp"
+        android:text="Comer mais saudável"
+        android:textAllCaps="false"
+        android:background="@drawable/edit_text_background"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/app_button_green"
+        android:textColor="@color/app_button_text"/>
+
+
+
+
+
+
+</LinearLayout>

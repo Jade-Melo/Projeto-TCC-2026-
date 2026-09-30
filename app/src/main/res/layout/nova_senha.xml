@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Estrutura tela de confirmação da nova senha -->
+
+    <!-- Logo -->
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="230dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/images1logo"/>
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:text="Senha"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textColor="@color/app_text_primary"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Descrição -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="45dp"
+        android:gravity="center"
+        android:text="Digite sua senha para entrar na conta"
+        android:textColor="@color/app_text_primary"
+        android:textSize="18sp" />
+
+    <!-- Nova senha -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:text="Nova senha:"
+        android:textStyle="bold"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textSize="18sp" />
+
+    <!-- Digitar a senha -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Digite sua senha"
+        android:textColor="@color/social_button_stroke"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_background"
+        android:inputType="textPassword" />
+
+    <!-- Confirmar senha -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:text="Confirme sua senha :"
+        android:textStyle="bold"
+        android:fontFamily="@font/inter_18pt_regular"
+        android:textSize="18sp" />
+
+    <!-- Confirmar a senha -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="Confirme sua senha"
+        android:textColor="@color/social_button_stroke"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_background"
+        android:inputType="textPassword" />
+
+    <!-- Botão -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        android:fontFamily="@font/inter_18pt_medium"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/app_button_green"
+        android:textColor="@color/app_button_text"/>
+
+</LinearLayout>
