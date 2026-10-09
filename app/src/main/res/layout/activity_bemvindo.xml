@@ -5,18 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_background"
+    android:background="@color/fundo_aplicativo"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Activites.BemVindoActivity">
 
+    <!-- Topo e Logo do app -->
     <ImageView
         android:layout_width="180dp"
         android:layout_height="230dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/images1logo" />
+        android:src="@drawable/logo" />
 
+    <!-- Texto Bem-vindo -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,37 +26,41 @@
         android:fontFamily="@font/inter_18pt_medium"
         android:textStyle="bold"
         android:textSize="15sp"
-        android:textColor="@color/app_text_primary"
+        android:textColor="@color/texto_titulo"
         android:gravity="center"
         android:layout_marginTop="5dp"/>
 
-    <Button
+    <!-- Botão de Entrar -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnEntrar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Entrar"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:cornerRadius="8dp"
         android:fontFamily="@font/inter_18pt_medium"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/app_button_green"
-        android:textColor="@color/app_button_text"/>
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/fundo_botao_principal"
+        android:textColor="@color/texto_botao_principal"/>
 
-    <Button
+    <!-- Botão de Cadastrar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCadastrar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Cadastrar"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:cornerRadius="8dp"
         android:fontFamily="@font/inter_18pt_medium"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="@color/app_button_green"
-        android:textColor="@color/app_button_text"/>
+        android:backgroundTint="@color/fundo_botao_principal"
+        android:textColor="@color/texto_botao_principal"/>
 
+    <!-- Texto ou -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,61 +68,41 @@
         android:fontFamily="@font/inter_18pt_medium"
         android:textStyle="bold"
         android:textSize="15sp"
-        android:textColor="@color/app_text_secondary"
+        android:textColor="@color/texto_titulo"
         android:gravity="center"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="15dp" />
 
+    <!-- Opção do usuário se cadastrar com Google -->
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGoogle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:text="Continuar com o Google"
         android:fontFamily="@font/inter_18pt_medium"
         android:textSize="14sp"
-        android:textColor="@color/social_button_text"
-        android:backgroundTint="@color/social_button_background"
+        android:textColor="@color/texto_botao_google"
+        android:backgroundTint="@color/fundo_botao_google"
         app:cornerRadius="8dp"
         app:icon="@drawable/google_logo"
         app:iconGravity="textStart"
         app:iconPadding="8dp"
-        app:strokeWidth="1dp"
-        app:strokeColor="#F4EDEDFF"
         android:clickable="true"
         android:focusable="true"
         app:iconTint="@null"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp"
-        android:text="Continuar com a Apple"
-        android:fontFamily="@font/inter_18pt_medium"
-        android:textSize="14sp"
-        android:textColor="@color/social_button_text"
-        android:backgroundTint="@color/social_button_background"
-        app:cornerRadius="8dp"
-        app:icon="@drawable/apple_logo"
-        app:iconGravity="textStart"
-        app:iconPadding="9dp"
-        app:strokeWidth="2dp"
-        app:strokeColor="#F4EDEDFF"
-        android:clickable="true"
-        android:focusable="true"
-        app:iconTint="@null"/>
-
+    <!-- Texto de política de privacidade -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ao clicar em cadastrar, você concorda com os nossos"
         android:textSize="12sp"
         android:fontFamily="@font/inter_18pt_medium"
-        android:textColor="@color/app_text_secondary"
+        android:textColor="@color/texto_subtitulo_e_termos"
         android:gravity="center"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:id="@+id/textTermos"
@@ -126,7 +112,7 @@
         android:textSize="12sp"
         android:fontFamily="@font/inter_18pt_medium"
         android:textStyle="bold"
-        android:textColor="@color/app_text_highlight"
+        android:textColor="@color/texto_titulo"
         android:gravity="center"
         android:clickable="true"
         android:focusable="true"/>

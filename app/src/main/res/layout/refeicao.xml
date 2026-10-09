@@ -31,7 +31,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentEnd="true"
                 android:contentDescription="Logo BalanceTech"
-                android:src="@drawable/images1logo"/>
+                android:src="@drawable/logo"/>
         </RelativeLayout>
 
         <!-- Seção Refeições -->

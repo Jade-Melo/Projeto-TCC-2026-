@@ -9,7 +9,7 @@
         android:layout_height="230dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="35dp"
-        android:src="@drawable/images1logo"
+        android:src="@drawable/logo"
         android:scaleType="fitCenter"
         />
 
