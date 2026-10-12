@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -11,64 +13,92 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Topo: Ícone do Menu e Logo -->
+        <!-- ========================= -->
+        <!-- TOPO -->
+        <!-- ========================= -->
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginBottom="16dp">
 
-            <ImageView
-                android:id="@+id/btnMenu"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerVertical="true"
-                android:contentDescription="Menu"
-                android:src="@drawable/menu_1"/>
+            <!-- MENU - ESQUERDA -->
 
-            <ImageView
-                android:id="@+id/imgLogo"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Menu"
+                android:padding="6dp"
+                android:src="@drawable/ic_menu" />
+
+
+            <!-- PERFIL - DIREITA -->
+
+            <ImageButton
+                android:id="@+id/btnPerfilRefeicoes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_alignParentEnd="true"
-                android:contentDescription="Logo BalanceTech"
-                android:src="@drawable/logo"/>
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="Perfil"
+                android:padding="6dp"
+                android:src="@drawable/ic_perfil_home" />
+
         </RelativeLayout>
 
-        <!-- Seção Refeições -->
+
+        <!-- ========================= -->
+        <!-- TÍTULO -->
+        <!-- ========================= -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="Refeições"
             android:textColor="#000000"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            android:textStyle="bold" />
 
-        <!-- Card principal de Refeições -->
+
+        <!-- ========================= -->
+        <!-- CARD DE REFEIÇÕES -->
+        <!-- ========================= -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_border"
             android:orientation="vertical"
             android:padding="12dp">
 
 
-            <!-- Café da manhã -->
+            <!-- CAFÉ DA MANHÃ -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="8dp">
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
 
                 <ImageView
                     android:id="@+id/iconCafe"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Café da manhã"
                     android:src="@drawable/ic_cafe" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/iconCafe"
+                    android:layout_centerVertical="true"
                     android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/iconCafe"
                     android:orientation="vertical">
 
                     <TextView
@@ -85,6 +115,7 @@
                         android:text="0/635 Kcal"
                         android:textColor="#757575"
                         android:textSize="14sp" />
+
                 </LinearLayout>
 
                 <ImageButton
@@ -92,32 +123,41 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Adicionar café da manhã"
                     android:src="@drawable/ic_add_circle" />
+
             </RelativeLayout>
+
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#E0E0E0" />
 
-            <!-- Almoço -->
+
+            <!-- ALMOÇO -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="8dp">
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
 
                 <ImageView
                     android:id="@+id/iconAlmoco"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Almoço"
                     android:src="@drawable/ic_almoco" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/iconAlmoco"
+                    android:layout_centerVertical="true"
                     android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/iconAlmoco"
                     android:orientation="vertical">
 
                     <TextView
@@ -134,6 +174,7 @@
                         android:text="0/847 Kcal"
                         android:textColor="#757575"
                         android:textSize="14sp" />
+
                 </LinearLayout>
 
                 <ImageButton
@@ -141,32 +182,41 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Adicionar almoço"
                     android:src="@drawable/ic_add_circle" />
+
             </RelativeLayout>
+
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#E0E0E0" />
 
-            <!-- Lanche -->
+
+            <!-- LANCHE -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="8dp">
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
 
                 <ImageView
                     android:id="@+id/iconLanche"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Lanche"
                     android:src="@drawable/id_lanche" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/iconLanche"
+                    android:layout_centerVertical="true"
                     android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/iconLanche"
                     android:orientation="vertical">
 
                     <TextView
@@ -183,6 +233,7 @@
                         android:text="0/110 Kcal"
                         android:textColor="#757575"
                         android:textSize="14sp" />
+
                 </LinearLayout>
 
                 <ImageButton
@@ -190,32 +241,41 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Adicionar lanche"
                     android:src="@drawable/ic_add_circle" />
+
             </RelativeLayout>
+
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#E0E0E0" />
 
-            <!-- Jantar -->
+
+            <!-- JANTAR -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="8dp">
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
 
                 <ImageView
                     android:id="@+id/iconJantar"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Jantar"
                     android:src="@drawable/id_janta" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/iconJantar"
+                    android:layout_centerVertical="true"
                     android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/iconJantar"
                     android:orientation="vertical">
 
                     <TextView
@@ -232,6 +292,7 @@
                         android:text="0/530 Kcal"
                         android:textColor="#757575"
                         android:textSize="14sp" />
+
                 </LinearLayout>
 
                 <ImageButton
@@ -239,13 +300,20 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Adicionar jantar"
                     android:src="@drawable/ic_add_circle" />
+
             </RelativeLayout>
 
         </LinearLayout>
 
-        <!-- Seção Hoje -->
+
+        <!-- ========================= -->
+        <!-- HOJE -->
+        <!-- ========================= -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -258,6 +326,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:text="Consumir 2.100 Kcal"
             android:textColor="#666666"
             android:textSize="14sp" />
@@ -265,12 +334,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:text="1.600 Consumidas"
             android:textColor="#333333"
             android:textSize="12sp"
             android:textStyle="bold" />
 
-        <!-- Barra de Progresso Verde -->
+
+        <!-- ========================= -->
+        <!-- BARRA DE CALORIAS -->
+        <!-- ========================= -->
+
         <ProgressBar
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
@@ -281,14 +355,20 @@
             android:progress="1600"
             android:progressDrawable="@drawable/custom_progress_green" />
 
-        <!-- Cards de Macronutrientes -->
+
+        <!-- ========================= -->
+        <!-- MACRONUTRIENTES -->
+        <!-- ========================= -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3">
 
-            <!-- Carbs -->
+
+            <!-- CARBOIDRATOS -->
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -321,9 +401,12 @@
                     android:max="359"
                     android:progress="271"
                     android:progressDrawable="@drawable/custom_progress_red" />
+
             </LinearLayout>
 
-            <!-- Proteína -->
+
+            <!-- PROTEÍNA -->
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -336,7 +419,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Proteina"
+                    android:text="Proteína"
                     android:textColor="#333333"
                     android:textSize="12sp" />
 
@@ -356,9 +439,12 @@
                     android:max="202"
                     android:progress="143"
                     android:progressDrawable="@drawable/custom_progress_purple" />
+
             </LinearLayout>
 
-            <!-- Gordura -->
+
+            <!-- GORDURA -->
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -390,10 +476,12 @@
                     android:layout_marginTop="4dp"
                     android:max="175"
                     android:progress="150"
-                    android:progressDrawable="@drawable/costum_progess_blue"/>
+                    android:progressDrawable="@drawable/costum_progess_blue" />
+
             </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>

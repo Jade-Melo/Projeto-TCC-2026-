@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo_aplicativo"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/questoionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
+
+        <!-- LOGO -->
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo"
+            android:contentDescription="Logo Balance Tech" />
+
+        <!-- TÍTULO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="center"
+            android:text="Vamos conhecer você!"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- GÊNERO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Gênero:"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinnerGenero"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp" />
+
+        <!-- IDADE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:text="Idade:"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editIdade"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Digite sua idade"
+            android:inputType="number"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textColorHint="@color/texto_titulo"
+            android:textSize="18sp" />
+
+        <!-- PESO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:text="Peso:"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editPeso"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Digite seu peso em quilogramas (kg)"
+            android:inputType="numberDecimal"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textColorHint="@color/texto_titulo"
+            android:textSize="18sp" />
+
+        <!-- ALTURA -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:text="Altura:"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editAltura"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Digite sua altura em centímetros (cm)"
+            android:inputType="number"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textColorHint="@color/texto_titulo"
+            android:textSize="18sp" />
+
+        <!-- BOTÃO CONTINUE -->
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Entrar"
+            android:textSize="18sp"
+            app:cornerRadius="8dp"
+            android:fontFamily="@font/inter_18pt_medium"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/fundo_botao_principal"
+            android:textColor="@color/texto_botao_principal" />
+
+    </LinearLayout>
+
+</ScrollView>

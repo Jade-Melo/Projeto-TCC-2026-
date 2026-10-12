@@ -2,12 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_background"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:background="@color/fundo_aplicativo"
+    tools:context=".activites.EsqueceuSenhaActivity">
 
     <ImageView
         android:layout_width="180dp"
@@ -24,20 +23,21 @@
         android:fontFamily="@font/inter_18pt_regular"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:textColor="@color/app_text_primary"
+        android:textColor="@color/texto_titulo"
         android:gravity="center"
         android:layout_marginTop="5dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
         android:text="Confirme seu email para enviarmos \no código de verificação."
         android:fontFamily="@font/inter_18pt_regular"
         android:textSize="15sp"
-        android:textColor="@color/app_text_primary"
+        android:textColor="@color/texto_titulo"
         android:gravity="center"
-        android:layout_marginTop="5dp"/>
-
+       />
 
     <TextView
         android:layout_width="match_parent"
@@ -46,22 +46,24 @@
         android:fontFamily="@font/inter_18pt_regular"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:textColor="@color/app_text_primary"
+        android:textColor="@color/texto_titulo"
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"/>
 
     <EditText
+        android:id="@+id/emailRecuperacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="20dp"
-        android:text="Digite seu email"
-        android:textColor="@color/social_button_stroke"
+        android:hint="Digite seu email"
+        android:textColor="@color/texto_subtitulo_e_termos"
         android:padding="10dp"
-        android:background="@drawable/edit_text_background"/>
+        android:background="@drawable/edittext_background"/>
 
     <Button
+        android:id="@+id/esqueciSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Continue"
@@ -71,8 +73,8 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="25dp"
-        android:backgroundTint="@color/app_button_green"
-        android:textColor="@color/app_button_text"/>
+        android:backgroundTint="@color/fundo_botao_principal"
+        android:textColor="@color/texto_botao_principal"/>
 
 
 </LinearLayout>

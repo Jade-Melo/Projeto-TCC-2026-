@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/fundo_aplicativo"
     android:orientation="vertical"
-    tools:context=".Activites.BemVindoActivity">
+    tools:context=".activites.BemVindoActivity">
 
     <!-- Topo e Logo do app -->
     <ImageView

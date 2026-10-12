@@ -1,9 +1,9 @@
-package com.example.balancetech_tcc_equipe05.Activites;
+package com.example.balancetech_tcc_equipe05.activites;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.balancetech_tcc_equipe05.R;
@@ -18,6 +18,7 @@ public class BemVindoActivity extends AppCompatActivity {
 
         Button btnEntrar = findViewById(R.id.btnEntrar);
         Button btnCadastrar = findViewById(R.id.btnCadastrar);
+        Button btnGoogle = findViewById(R.id.btnGoogle);
 
         // Entrar → Login
         btnEntrar.setOnClickListener(v -> {
@@ -41,6 +42,17 @@ public class BemVindoActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        // Ação do Botão Google
+
+        btnGoogle.setOnClickListener(v-> {
+            iniciarLoginComGoogle();
+        });
+
+    }
+
+    private void iniciarLoginComGoogle() {
+        Toast.makeText(this, "Abrindo seleção da conta Google... ", Toast.LENGTH_SHORT).show();
     }
 }
+
 

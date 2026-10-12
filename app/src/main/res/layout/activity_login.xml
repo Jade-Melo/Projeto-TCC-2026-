@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:background="@color/fundo_aplicativo"
     android:orientation="vertical"
-    tools:context="Activites.LoginActivity">
+    tools:context="activites.LoginActivity">
 
     <ImageView
         android:layout_width="180dp"

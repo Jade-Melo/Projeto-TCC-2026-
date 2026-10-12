@@ -1,4 +1,4 @@
-package com.example.balancetech_tcc_equipe05.Activites;
+package com.example.balancetech_tcc_equipe05.activites;
 
 import android.content.Intent;
 import android.net.Uri;
