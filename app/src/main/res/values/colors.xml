@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Cores Basicas -->
+    <color name="branco">#FFFFFF</color>
+    <color name="preto">#000000</color>
 
-    <color name="app_background">#FFFFFF</color>
-    <color name="app_text_primary">#000000</color>
-    <color name="app_text_secondary">#6A6A6A</color>
-    <color name="app_text_highlight">#282828</color>
+    <!-- Fundo das Telas -->
+    <color name="fundo_aplicativo">#FFFFFF</color>
 
-    <color name="app_button_green">#598C53</color>
-    <color name="app_button_text">#FFFFFF</color>
+    <!-- Botoes Principais (Verde) -->
+    <color name="fundo_botao_principal">#538350</color>
+    <color name="texto_botao_principal">#FFFFFF</color>
 
-    <color name="social_button_background">#F4EDEDFF</color>
-    <color name="social_button_text">#000000</color>
-    <color name="social_button_stroke">#D0D0D0</color>
+    <!-- Botao Social (Google) -->
+    <color name="fundo_botao_google">#EEEDF9</color>
+    <color name="texto_botao_google">#000000</color>
 
-    <color name="apple_logo_color">#000000</color>
-    <color name="app_edit_text">#FFFFFF</color>
+    <!-- Textos do App -->
+    <color name="texto_titulo">#000000</color>
+    <color name="texto_subtitulo_e_termos">#35483A</color>
+    <color name="texto_destaque_verde">#598C53</color>
+
+    <!-- Campos de Entrada de Texto (Inputs / EditText) -->
+    <color name="fundo_campo_texto">#D5E4D2</color>
+    <color name="borda_campo_texto">#E8F3E7</color>
 </resources>

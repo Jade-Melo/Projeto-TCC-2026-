@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fundo_aplicativo"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="40dp">
+
+        <!---Logo-->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="180dp"
+            android:layout_height="230dp"
+            android:src="@drawable/logo"
+            android:scaleType="fitCenter"
+            android:contentDescription="Logo Balance Tech" />
+
+        <!---Titulo-->
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Criar conta"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textStyle="bold"
+            android:textColor="@color/texto_titulo"
+            android:textSize="30sp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtSubtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seja bem-vindo"
+            android:textStyle="bold"
+            android:textColor="@color/texto_titulo"
+            android:textSize="15sp"
+            android:layout_marginTop="18dp" />
+
+        <!---Campo email-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/texto_titulo"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="5dp" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="18dp"
+            android:hint="Digite seu email:"
+            android:textColor="@color/texto_titulo"
+            android:textColorHint="@color/texto_subtitulo_e_termos"
+            android:paddingEnd="18dp"
+            android:textSize="18sp"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="30dp"/>
+
+        <!---Campo Nome-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/texto_titulo"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"  />
+
+        <EditText
+            android:id="@+id/edtNome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:textColor="@color/texto_titulo"
+            android:textSize="18sp"
+            android:hint="Digite seu nome"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/texto_subtitulo_e_termos"
+            android:layout_marginBottom="30dp" />
+
+
+        <!---Campo Senha-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Senha"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/texto_titulo"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"  />
+
+        <EditText
+            android:id="@+id/edtSenha"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Digite sua senha:"
+            android:textColorHint="@color/texto_subtitulo_e_termos"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:textColor="@color/texto_titulo"
+            android:textSize="18sp"
+            android:layout_marginBottom="5dp"
+            android:inputType="textPassword"
+            />
+
+        <!---Botão Criar Conta-->
+        <Button
+            android:id="@+id/btnCriarConta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Criar sua conta"
+            android:textSize="18sp"
+            app:cornerRadius="8dp"
+            android:fontFamily="@font/inter_18pt_medium"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/fundo_botao_principal"
+            android:textColor="@color/texto_botao_principal"/>
+
+    </LinearLayout>
+
+</ScrollView>

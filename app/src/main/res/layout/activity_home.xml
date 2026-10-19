@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="20dp">
+
+        <!-- ===================== -->
+        <!-- TOPO -->
+        <!-- ===================== -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- MENU -->
+
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Abrir menu"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_menu"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- ESPAÇO -->
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- PERFIL DA HOME -->
+            <!-- ÍCONE VERDE, SEPARADO DO ÍCONE DO MENU -->
+
+            <ImageButton
+                android:id="@+id/btnPerfilHome"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="2dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Abrir perfil"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_perfil_home"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+
+        <!-- ===================== -->
+        <!-- ATALHOS -->
+        <!-- ===================== -->
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- HISTÓRICO -->
+
+                <LinearLayout
+                    android:id="@+id/btnHistorico"
+                    android:layout_width="125dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/menu_item_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:contentDescription="Histórico"
+                        android:src="@drawable/ic_historico" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center"
+                        android:text="Histórico"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <!-- EVOLUÇÃO -->
+
+                <LinearLayout
+                    android:id="@+id/btnEvolucao"
+                    android:layout_width="125dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="7dp"
+                    android:background="@drawable/menu_item_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:contentDescription="Evolução"
+                        android:src="@drawable/ic_evolucao" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center"
+                        android:text="Evolução"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <!-- MONTE SEU PRATO -->
+
+                <LinearLayout
+                    android:id="@+id/btnMontePrato"
+                    android:layout_width="155dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="7dp"
+                    android:background="@drawable/menu_item_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:contentDescription="Monte seu Prato"
+                        android:src="@drawable/ic_monte_prato" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center"
+                        android:text="Monte seu Prato"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+        <!-- ===================== -->
+        <!-- ESPAÇO -->
+        <!-- ===================== -->
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+
+        <!-- ===================== -->
+        <!-- BANNER -->
+        <!-- ===================== -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:clipToOutline="true"
+            android:background="@drawable/banner_background">
+
+            <ImageView
+                android:id="@+id/imgBanner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Bem-vindo ao Balance Tech"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner_home"
+                android:clipToOutline="true"
+                android:background="@drawable/banner_background" />
+
+            <!-- Área clicável sobre "Monte seu prato" -->
+            <View
+                android:id="@+id/btnBannerMontePrato"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="55dp"
+                android:layout_marginBottom="18dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </FrameLayout>
+
+        <!-- ===================== -->
+        <!-- HOJE -->
+        <!-- ===================== -->
+
+        <TextView
+            android:id="@+id/txtHoje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Hoje"
+            android:textColor="#222222"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtCalorias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Consumir 2.100 Kcal"
+            android:textColor="#555555"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txtConsumidas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.600 Consumidas"
+            android:textColor="#555555"
+            android:textSize="15sp" />
+
+
+        <!-- BARRA DE CALORIAS -->
+
+        <ProgressBar
+            android:id="@+id/progressCalorias"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="8dp"
+            android:max="2100"
+            android:progress="1600"
+            android:progressTint="#57905C" />
+
+
+        <!-- ===================== -->
+        <!-- MACRONUTRIENTES -->
+        <!-- ===================== -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <!-- CARBOIDRATOS -->
+
+            <LinearLayout
+                android:id="@+id/cardCarboidratos"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carbs"
+                    android:textColor="#333333"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtCarboidratos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="211/349g"
+                    android:textColor="#555555"
+                    android:textSize="12sp" />
+
+                <ProgressBar
+                    android:id="@+id/progressCarbs"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginTop="10dp"
+                    android:max="349"
+                    android:progress="211"
+                    android:progressTint="#E65B68" />
+
+            </LinearLayout>
+
+
+            <!-- PROTEÍNA -->
+
+            <LinearLayout
+                android:id="@+id/cardProteina"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proteína"
+                    android:textColor="#333333"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtProteina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="143/209g"
+                    android:textColor="#555555"
+                    android:textSize="12sp" />
+
+                <ProgressBar
+                    android:id="@+id/progressProteina"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginTop="10dp"
+                    android:max="209"
+                    android:progress="143"
+                    android:progressTint="#B64ACB" />
+
+            </LinearLayout>
+
+
+            <!-- GORDURA -->
+
+            <LinearLayout
+                android:id="@+id/cardGordura"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gordura"
+                    android:textColor="#333333"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtGordura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="108/175g"
+                    android:textColor="#555555"
+                    android:textSize="12sp" />
+
+                <ProgressBar
+                    android:id="@+id/progressGordura"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginTop="10dp"
+                    android:max="175"
+                    android:progress="108"
+                    android:progressTint="#3295D5" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- ===================== -->
+        <!-- CONTEÚDOS -->
+        <!-- ===================== -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:orientation="horizontal">
+
+            <!-- JEJUM -->
+
+            <LinearLayout
+                android:id="@+id/cardJejum"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:contentDescription="O que é jejum"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/jejum" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:text="O que é jejum?"
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <!-- MASSA MAGRA -->
+
+            <LinearLayout
+                android:id="@+id/cardMassaMagra"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:contentDescription="Ganho de massa magra"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/massa_magra" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:text="Ganho de massa magra"
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

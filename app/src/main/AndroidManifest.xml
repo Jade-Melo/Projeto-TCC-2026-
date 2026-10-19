@@ -1,32 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- PERMISSÕES BLUETOOTH -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+    <uses-permission android:name="android.permission.INTERNET "/>
+
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="Balance Tech"
         android:supportsRtl="true"
         android:theme="@style/Theme.BalanceTech_TCC_Equipe05">
 
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SobreNós" android:exported="false" />
+        <!-- ========================= -->
+        <!-- SPLASH / TELA INICIAL -->
+        <!-- ========================= -->
 
         <activity
-            android:name=".EsqueceuSenha" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".activites.SplashActivity"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <!-- ========================= -->
+        <!-- SPLASH / TELA BEM VINDO -->
+        <!-- ========================= -->
+
+        <activity android:name=".activites.BemVindoActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- LOGIN -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.LoginActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- ESQUECEU A SENHA -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.EsqueceuSenhaActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- VERIFICAÇÃO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.VerificacaoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- NOVA SENHA -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.NovaSenhaActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- QUESTIONARIO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.QuestionarioActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- QUESTIONARIO PESSOAL -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.QuestionarioPessoalActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- CADASTRO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.CadastroActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- HOME -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.HomeActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- SOBRE NÓS -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.SobreNosActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- MENU -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.MenuActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BalanceTech_TCC_Equipe05" />
+
+
+        <!-- ========================= -->
+        <!-- PERFIL -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.PerfilActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- EXERCÍCIOS -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.ExercicioActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- CONEXÃO COM A BALANÇA -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.ConexaoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- REFEIÇÔES -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.RefeicoesActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- EVOLUÇÂO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.EvolucaoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- HISTÓRICO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.HistoricoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- MONTEPRATO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".activites.MontePratoActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
