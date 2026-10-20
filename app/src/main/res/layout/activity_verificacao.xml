@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo_aplicativo"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
+
+        <!-- BOTÃO VOLTAR -->
+        <TextView
+            android:id="@+id/btnVoltar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="@color/texto_titulo"
+            android:textSize="45sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- LOGO -->
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo" />
+
+        <!-- TÍTULO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="Verificação"
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <!-- DESCRIÇÃO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="40dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Verifique o código que enviamos para seu e-mail e escreva no campo abaixo."
+            android:fontFamily="@font/inter_18pt_regular"
+            android:textColor="@color/texto_titulo"
+            android:textSize="15sp" />
+
+        <!-- CAMPOS DO CÓDIGO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- PRIMEIRO NÚMERO -->
+            <EditText
+                android:id="@+id/codigo1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/inter_18pt_regular"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/texto_titulo"
+                android:textSize="20sp" />
+
+            <!-- SEGUNDO NÚMERO -->
+            <EditText
+                android:id="@+id/codigo2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/inter_18pt_regular"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/texto_titulo"
+                android:textSize="20sp" />
+
+            <!-- TERCEIRO NÚMERO -->
+            <EditText
+                android:id="@+id/codigo3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/inter_18pt_regular"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/texto_titulo"
+                android:textSize="20sp" />
+
+            <!-- QUARTO NÚMERO -->
+            <EditText
+                android:id="@+id/codigo4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_background"
+                android:fontFamily="@font/inter_18pt_regular"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/texto_titulo"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <!-- BOTÃO CONTINUE -->
+        <Button
+            android:id="@+id/btnVerificacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textSize="18sp"
+            app:cornerRadius="8dp"
+            android:fontFamily="@font/inter_18pt_medium"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/fundo_botao_principal"
+            android:textColor="@color/texto_botao_principal"/>
+
+    </LinearLayout>
+
+</ScrollView>
