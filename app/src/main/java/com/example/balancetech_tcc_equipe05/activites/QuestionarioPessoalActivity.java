@@ -25,6 +25,14 @@ public class QuestionarioPessoalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionario_pessoal);
 
+        //Recebe os dados da tela anterior através do getIntent de acordo com o tipo do dado
+        // (int, double, string) e a etiqueta de cada dado (constante)
+        String generoRecebido = getIntent().getStringExtra("CHAVE_GENERO");
+        int idadeRecebida = getIntent().getIntExtra("CHAVE_IDADE", 0);
+        double pesoRecebido = getIntent().getDoubleExtra("CHAVE_PESO", 0.0);
+        int alturaRecebida = getIntent().getIntExtra("CHAVE_ALTURA", 0);
+
+
         btnPerderPeso = findViewById(R.id.btnPerderPeso);
         btnGanharMusculo = findViewById(R.id.btnGanharMusculo);
         btnManterPeso = findViewById(R.id.btnManterPeso);
@@ -69,8 +77,11 @@ public class QuestionarioPessoalActivity extends AppCompatActivity {
                     ExercicioActivity.class
             );
 
-            // Opcional: Se quiseres passar a escolha para a próxima tela
-            // intent.putExtra("OBJETIVO_ESCOLHIDO", objetivoSelecionado);
+            intent.putExtra("CHAVE_GENERO", generoRecebido);
+            intent.putExtra("CHAVE_IDADE", idadeRecebida);
+            intent.putExtra("CHAVE_PESO", pesoRecebido);
+            intent.putExtra("CHAVE_ALTURA", alturaRecebida);
+            intent.putExtra("CHAVE_OBJETIVO", objetivoSelecionado);
 
             startActivity(intent);
             finish();
