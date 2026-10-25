@@ -5,11 +5,16 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Usuario.class}, version = 2, exportSchema = false)
+@Database(entities = {Usuario.class, Perfil.class}, version = 3, exportSchema = false)
+
 public abstract class AppDatabase extends RoomDatabase {
 
     // Declara o DAO de usuário para que o Room o implemente automaticamente
     public abstract UsuarioDAO usuarioDao();
+
+    // Declara o DAO de perfil para que o Room o implemente automaticamente
+    public abstract PerfilDAO perfilDao();
+
 
     private static volatile AppDatabase INSTANCE;
 

@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.balancetech_tcc_equipe05.R;
 import com.example.balancetech_tcc_equipe05.activites.classes.AppDatabase;
+import com.example.balancetech_tcc_equipe05.activites.classes.Perfil;
 import com.example.balancetech_tcc_equipe05.activites.classes.Usuario;
 
 public class ExercicioActivity extends AppCompatActivity {
@@ -154,27 +155,27 @@ public class ExercicioActivity extends AppCompatActivity {
             }
 
             // Criamos um objeto do tipo Usuario para carregar todas as informações
-            Usuario usuarioEntity = new Usuario("", "", ""); // Deixamos nome, email e senha vazios
-            // por enquanto, pois serão atualizados no cadastro
+            Perfil perfilEntity = new Perfil();
+            perfilEntity.setUsuarioId(1);
 
             // Usamos os "Setters" para colocar os dados dentro desse usuário
-            usuarioEntity.setGenero(generoRecebido);
-            usuarioEntity.setIdade(idadeRecebida);
-            usuarioEntity.setPeso(pesoRecebido);
-            usuarioEntity.setAltura(alturaRecebida);
-            usuarioEntity.setObjetivo(objetivoRecebido);
-            usuarioEntity.setExercicio(exercicioSelecionado);
-            usuarioEntity.setImc(imc);
-            usuarioEntity.setMetaCalorica(metaCaloricaFinal);
+            perfilEntity.setGenero(generoRecebido);
+            perfilEntity.setIdade(idadeRecebida);
+            perfilEntity.setPeso(pesoRecebido);
+            perfilEntity.setAltura(alturaRecebida);
+            perfilEntity.setObjetivo(objetivoRecebido);
+            perfilEntity.setExercicio(exercicioSelecionado);
+            perfilEntity.setImc(imc);
+            perfilEntity.setMetaCalorica(metaCaloricaFinal);
 
             // Disparamos a linha em segundo plano para salvar no banco de dados SQLite sem travar a tela
             java.util.concurrent.Executors.newSingleThreadExecutor().execute(() -> {
 
                 // Pegamos a instância do banco e chamamos o metodo inserir do DAO
-                AppDatabase.getDatabase(ExercicioActivity.this).usuarioDao().cadastrar(usuarioEntity);
+                AppDatabase.getDatabase(ExercicioActivity.this).perfilDao().inserir(perfilEntity);
 
                 // Avisamos no console do PC que deu certo!
-                Log.d("TESTE_BANCO", "Dados salvos com sucesso no SQLite local do Room!");
+                Log.d("TESTE_BANCO", "Dados salvos com sucesso na tabela perfil");
             });
 
 
