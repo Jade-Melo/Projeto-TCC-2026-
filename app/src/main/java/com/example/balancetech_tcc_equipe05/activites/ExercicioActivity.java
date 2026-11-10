@@ -14,206 +14,160 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.balancetech_tcc_equipe05.R;
-import com.example.balancetech_tcc_equipe05.activites.classes.AppDatabase;
 import com.example.balancetech_tcc_equipe05.activites.classes.Perfil;
-import com.example.balancetech_tcc_equipe05.activites.classes.Usuario;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ExercicioActivity extends AppCompatActivity {
+    private static final String ESTADO_ATIVIDADE = "atividade";
+    private static final String[] NIVEIS = {
+            "Pouco exercício",
+            "Exercício de 1 a 3 vezes por semana",
+            "Exercício de 4 a 5 vezes por semana",
+            "Exercício de 6 a 7 vezes por semana",
+            "Exercícios intensos diariamente"
+    };
+    private static final double[] FATORES = {1.2, 1.375, 1.55, 1.725, 1.9};
 
-    private Button btnFinalizar;
-
-    private Button btnPoucoExercicio;
-
-    private Button btnExercicio1a3;
-
-    private Button btnExercicio4a5;
-
-    private Button btnExercicio6a7;
-
-    private Button btnExercicioIntenso;
-
-    private String exercicioSelecionado = "";
-
-    private transient Button botaoAnterior = null;
-
-    private void destarcarBotaoSelecionado(Button botaoAnterior){
-        Toast.makeText(this, "Selecionado :" + exercicioSelecionado, Toast.LENGTH_SHORT);
-    }
+    private final ExecutorService banco = Executors.newSingleThreadExecutor();
+    private int atividade = -1;
+    private Button finalizar;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         EdgeToEdge.enable(this);
-
         setContentView(R.layout.activity_exercicio);
 
-        String generoRecebido = getIntent().getStringExtra("CHAVE_GENERO");
-        int idadeRecebida = getIntent().getIntExtra("CHAVE_IDADE", 0);
-        Double pesoRecebido = getIntent().getDoubleExtra("CHAVE_PESO", 0.0);
-        int alturaRecebida = getIntent().getIntExtra("CHAVE_ALTURA", 0);
-        String objetivoRecebido = getIntent().getStringExtra("CHAVE_OBJETIVO");
+        if (savedInstanceState != null) {
+            atividade = savedInstanceState.getInt(ESTADO_ATIVIDADE, -1);
+        }
 
-        btnFinalizar = findViewById(R.id.btnFinalizar);
-        btnPoucoExercicio = findViewById(R.id.btnPoucoExercicio);
-        btnExercicio1a3 = findViewById(R.id.btnExercicio1a3);
-        btnExercicio4a5 = findViewById(R.id.btnExercicio4a5);
-        btnExercicio6a7 = findViewById(R.id.btnExercicio6a7);
-        btnExercicioIntenso = findViewById(R.id.btnExercicioIntenso);
+        finalizar = findViewById(R.id.btnFinalizar);
+        configurar(R.id.btnPoucoExercicio, 0);
+        configurar(R.id.btnExercicio1a3, 1);
+        configurar(R.id.btnExercicio4a5, 2);
+        configurar(R.id.btnExercicio6a7, 3);
+        configurar(R.id.btnExercicioIntenso, 4);
+        finalizar.setOnClickListener(v -> salvarPerfil());
 
-        btnPoucoExercicio.setOnClickListener(v-> {
-            exercicioSelecionado = "Pouco exercício";
-            destarcarBotaoSelecionado(btnPoucoExercicio);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets barras = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(barras.left, barras.top, barras.right, barras.bottom);
+            return insets;
         });
+    }
 
-        btnExercicio1a3.setOnClickListener(v-> {
-            exercicioSelecionado = "Exercício de 1 a 3 vezes por semana";
-            destarcarBotaoSelecionado(btnExercicio1a3);
+    private void configurar(int botao, int indice) {
+        findViewById(botao).setOnClickListener(v -> {
+            atividade = indice;
+            Toast.makeText(this, "Selecionado: " + NIVEIS[indice], Toast.LENGTH_SHORT).show();
         });
+    }
 
-        btnExercicio4a5.setOnClickListener(v-> {
-            exercicioSelecionado = "Exercício de 4 a 5 vezes por semana";
-            destarcarBotaoSelecionado(btnExercicio4a5);
-        });
+    private void salvarPerfil() {
+        if (atividade < 0 || atividade >= NIVEIS.length) {
+            Toast.makeText(this, "Selecione seu nível de atividade física.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
+        Intent dados = getIntent();
+        int usuarioId = dados.getIntExtra(SessaoUsuario.EXTRA_ID, 0);
+        String genero = dados.getStringExtra("CHAVE_GENERO");
+        int idade = dados.getIntExtra("CHAVE_IDADE", 0);
+        double peso = dados.getDoubleExtra("CHAVE_PESO", 0);
+        int altura = dados.getIntExtra("CHAVE_ALTURA", 0);
+        String objetivo = dados.getStringExtra("CHAVE_OBJETIVO");
+        boolean homem = "Homem".equalsIgnoreCase(genero);
+        if (usuarioId <= 0 || idade <= 0 || !Alimentacao.positivo(peso) || altura <= 0
+                || (!homem && !"Mulher".equalsIgnoreCase(genero)) || objetivo == null) {
+            Toast.makeText(this, "Confira os dados do questionário.", Toast.LENGTH_LONG).show();
+            Intent reiniciar = new Intent(this, usuarioId > 0
+                    ? QuestionarioActivity.class : LoginActivity.class);
+            reiniciar.putExtra(SessaoUsuario.EXTRA_ID, usuarioId);
+            startActivity(reiniciar);
+            finish();
+            return;
+        }
 
-        btnExercicio6a7.setOnClickListener(v-> {
-            exercicioSelecionado = "Exercício de 6 a 7 vezes por semana";
-            destarcarBotaoSelecionado(btnExercicio6a7);
-        });
+        double alturaEmMetros = altura / 100.0;
+        double imc = peso / (alturaEmMetros * alturaEmMetros);
+        double tmb = homem
+                ? 88.362 + 13.397 * peso + 4.799 * altura - 5.677 * idade
+                : 447.593 + 9.247 * peso + 3.098 * altura - 4.330 * idade;
+        double gasto = tmb * FATORES[atividade];
+        double ajuste = 0;
+        if ("Perder Peso".equalsIgnoreCase(objetivo)) {
+            ajuste = -400;
+        } else if ("Ganhar Músculo".equalsIgnoreCase(objetivo)) {
+            ajuste = 400;
+        }
+        double meta = gasto + ajuste;
+        if (!Alimentacao.positivo(meta) || !Alimentacao.positivo(imc)) {
+            Toast.makeText(this, "Confira idade, peso e altura para calcular a meta.",
+                    Toast.LENGTH_LONG).show();
+            Intent reiniciar = new Intent(this, QuestionarioActivity.class);
+            reiniciar.putExtra(SessaoUsuario.EXTRA_ID, usuarioId);
+            startActivity(reiniciar);
+            finish();
+            return;
+        }
 
+        Perfil perfil = new Perfil();
+        perfil.setUsuarioId(usuarioId);
+        perfil.setGenero(genero);
+        perfil.setIdade(idade);
+        perfil.setPeso(peso);
+        perfil.setAltura(altura);
+        perfil.setObjetivo(objetivo);
+        perfil.setExercicio(NIVEIS[atividade]);
+        perfil.setImc(imc);
+        perfil.setMetaCalorica(meta);
 
-
-        btnExercicioIntenso.setOnClickListener(v-> {
-            exercicioSelecionado = "Exercícios intensos diariamente";
-            destarcarBotaoSelecionado(btnExercicioIntenso);
-        });
-
-
-
-        btnFinalizar.setOnClickListener(v -> {
-            //Trava de segurança para ver se o usuario escolheu o exercício
-            if (exercicioSelecionado.isEmpty()) {
-                Toast.makeText(this, "Por favor, selecione seu nível de atividade física.", Toast.LENGTH_SHORT).show();
-                return; // Para o código aqui e não faz nenhuma conta com o "nada"
+        finalizar.setEnabled(false);
+        banco.execute(() -> {
+            try {
+                MetasPerfil.salvar(getApplicationContext(), perfil);
+                runOnUiThread(() -> abrirHome(usuarioId, imc, tmb, gasto, meta));
+            } catch (RuntimeException erro) {
+                Log.e("BalanceTech", "Erro ao salvar o perfil", erro);
+                runOnUiThread(() -> {
+                    if (!isFinishing() && !isDestroyed()) {
+                        finalizar.setEnabled(true);
+                        Toast.makeText(this, "Não foi possível salvar o perfil. Tente novamente.",
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
             }
-
-            // Converte a altura de centímetros (int) para metros (double)]
-            double alturaEmMetros = alturaRecebida / 100.0;
-
-            //Aplicamos a fórmula do IMC já com a altura convertida
-            double imc = pesoRecebido / (alturaEmMetros * alturaEmMetros);
-
-            // declara a variavel tmb para realizar os calculos da taxa metabólica basal (TMB)
-            double tmb = 0.0;
-
-            //verifica se o genero é homem, se for realiza o cálculo da TMB para homens,
-            if (generoRecebido.equalsIgnoreCase("Homem")) {
-                //Fórmula da TMB para homens
-                tmb = 88.362 + (13.397 * pesoRecebido) + (4.799 * alturaRecebida) - (5.677 * idadeRecebida);
-            }else{
-                // se não for homem realiza o cálculo da TMB com os valores das mulheres
-                tmb =  447.593 + (9.247 * pesoRecebido) + (3.098 * alturaRecebida) - (4.330 * idadeRecebida);
-            }
-
-            double gastoCaloricoTotal = 0.0;
-
-            //Analisa a escolha do usuario
-            switch (exercicioSelecionado) {
-                case "Pouco exercício":
-                    gastoCaloricoTotal = tmb * 1.2;
-                    break;
-
-                case "Exercício de 1 a 3 vezes por semana":
-                    gastoCaloricoTotal = tmb * 1.375;
-                    break;
-
-                case "Exercício de 4 a 5 vezes por semana":
-                    gastoCaloricoTotal = tmb * 1.55;
-                    break;
-
-                case "Exercício de 6 a 7 vezes por semana":
-                    gastoCaloricoTotal = tmb * 1.725;
-                    break;
-
-                case "Exercícios intensos diariamente":
-                    gastoCaloricoTotal = tmb * 1.9; // Fator para atletas de alta intensidade
-                    break;
-
-                default:
-                    gastoCaloricoTotal = tmb * 1.2; // Valor de segurança caso nada seja selecionado
-                    break;
-            }
-
-            double metaCaloricaFinal = gastoCaloricoTotal;
-
-            if (objetivoRecebido.equalsIgnoreCase("Perder Peso")) {
-                metaCaloricaFinal = gastoCaloricoTotal - 400; //Déficit calórico
-            } else if (objetivoRecebido.equalsIgnoreCase("Ganhar Músculo")) {
-                metaCaloricaFinal = gastoCaloricoTotal + 400; //Superávit calórico
-            }
-
-            // Criamos um objeto do tipo Usuario para carregar todas as informações
-            Perfil perfilEntity = new Perfil();
-            perfilEntity.setUsuarioId(1);
-
-            // Usamos os "Setters" para colocar os dados dentro desse usuário
-            perfilEntity.setGenero(generoRecebido);
-            perfilEntity.setIdade(idadeRecebida);
-            perfilEntity.setPeso(pesoRecebido);
-            perfilEntity.setAltura(alturaRecebida);
-            perfilEntity.setObjetivo(objetivoRecebido);
-            perfilEntity.setExercicio(exercicioSelecionado);
-            perfilEntity.setImc(imc);
-            perfilEntity.setMetaCalorica(metaCaloricaFinal);
-
-            // Disparamos a linha em segundo plano para salvar no banco de dados SQLite sem travar a tela
-            java.util.concurrent.Executors.newSingleThreadExecutor().execute(() -> {
-
-                // Pegamos a instância do banco e chamamos o metodo inserir do DAO
-                AppDatabase.getDatabase(ExercicioActivity.this).perfilDao().inserir(perfilEntity);
-
-                // Avisamos no console do PC que deu certo!
-                Log.d("TESTE_BANCO", "Dados salvos com sucesso na tabela perfil");
-            });
-
-
-            Log.d("TESTE_CALCULOS", "IMC Calculado: " + imc);
-            Log.d("TESTE_CALCULOS", "TMB Calculada: " + tmb);
-            Log.d("TESTE_CALCULOS", "Gasto Total: " + gastoCaloricoTotal);
-            Log.d("TESTE_CALCULOS", "Meta Final: " + metaCaloricaFinal);
-
-            Intent intent = new Intent(
-                    ExercicioActivity.this,
-                    HomeActivity.class
-            );
-
-            intent.putExtra("RESULTADO_IMC", imc);
-            intent.putExtra("RESULTADO_TMB", tmb);
-            intent.putExtra("RESULTADO_GASTO", gastoCaloricoTotal);
-            intent.putExtra("RESULTADO_META", metaCaloricaFinal);
-
-            startActivity(intent);
         });
+    }
 
-        ViewCompat.setOnApplyWindowInsetsListener(
-                findViewById(R.id.main),
-                (v, insets) -> {
+    private void abrirHome(int usuarioId, double imc, double tmb, double gasto, double meta) {
+        if (isFinishing() || isDestroyed()) {
+            return;
+        }
+        SessaoUsuario.iniciar(usuarioId);
+        Intent home = new Intent(this, HomeActivity.class);
+        home.putExtra("RESULTADO_IMC", imc);
+        home.putExtra("RESULTADO_TMB", tmb);
+        home.putExtra("RESULTADO_GASTO", gasto);
+        home.putExtra("RESULTADO_META", meta);
+        home.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(home);
+        finish();
+    }
 
-                    Insets systemBars = insets.getInsets(
-                            WindowInsetsCompat.Type.systemBars()
-                    );
+    @Override
+    protected void onSaveInstanceState(Bundle estado) {
+        super.onSaveInstanceState(estado);
+        estado.putInt(ESTADO_ATIVIDADE, atividade);
+    }
 
-                    v.setPadding(
-                            systemBars.left,
-                            systemBars.top,
-                            systemBars.right,
-                            systemBars.bottom
-                    );
-
-                    return insets;
-                }
-        );
+    @Override
+    protected void onDestroy() {
+        banco.shutdown();
+        super.onDestroy();
     }
 }
