@@ -2,7 +2,6 @@ package com.example.balancetech_tcc_equipe05.activites;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,87 +9,44 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.balancetech_tcc_equipe05.R;
 
 public class QuestionarioPessoalActivity extends AppCompatActivity {
-
-    private Button btnPerderPeso;
-    private Button btnGanharMusculo;
-    private Button btnManterPeso;
-    private Button btnComerSaudavel;
-    private Button btnObjetivo;
-
-    // Variável para guardar o objetivo escolhido
-    private String objetivoSelecionado = "";
+    private static final String ESTADO_OBJETIVO = "objetivo";
+    private String objetivo = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionario_pessoal);
-
-        //Recebe os dados da tela anterior através do getIntent de acordo com o tipo do dado
-        // (int, double, string) e a etiqueta de cada dado (constante)
-        String generoRecebido = getIntent().getStringExtra("CHAVE_GENERO");
-        int idadeRecebida = getIntent().getIntExtra("CHAVE_IDADE", 0);
-        double pesoRecebido = getIntent().getDoubleExtra("CHAVE_PESO", 0.0);
-        int alturaRecebida = getIntent().getIntExtra("CHAVE_ALTURA", 0);
-
-
-        btnPerderPeso = findViewById(R.id.btnPerderPeso);
-        btnGanharMusculo = findViewById(R.id.btnGanharMusculo);
-        btnManterPeso = findViewById(R.id.btnManterPeso);
-        btnComerSaudavel = findViewById(R.id.btnComerSaudavel);
-        btnObjetivo = findViewById(R.id.btnObjetivo);
-
-        // Ação ao clicar em "Perder Peso"
-        btnPerderPeso.setOnClickListener(v -> {
-            objetivoSelecionado = "Perder Peso";
-            destacarBotaoSelecionado(btnPerderPeso);
-        });
-
-        // Ação ao clicar em "Ganhar Músculo"
-        btnGanharMusculo.setOnClickListener(v -> {
-            objetivoSelecionado = "Ganhar Músculo";
-            destacarBotaoSelecionado(btnGanharMusculo);
-        });
-
-        // Ação ao clicar em "Manter Peso"
-        btnManterPeso.setOnClickListener(v -> {
-            objetivoSelecionado = "Manter Peso";
-            destacarBotaoSelecionado(btnManterPeso);
-        });
-
-        // Ação ao clicar em "Comer Saudável"
-        btnComerSaudavel.setOnClickListener(v -> {
-            objetivoSelecionado = "Comer Saudável";
-            destacarBotaoSelecionado(btnComerSaudavel);
-        });
-
-        // Botão Continuar / Avançar
-        btnObjetivo.setOnClickListener(v -> {
-            // Valida se o usuário escolheu algum objetivo antes de avançar
-            if (objetivoSelecionado.isEmpty()) {
+        if (savedInstanceState != null) {
+            objetivo = savedInstanceState.getString(ESTADO_OBJETIVO, "");
+        }
+        findViewById(R.id.btnPerderPeso).setOnClickListener(v -> selecionar("Perder Peso"));
+        findViewById(R.id.btnGanharMusculo).setOnClickListener(v -> selecionar("Ganhar Músculo"));
+        findViewById(R.id.btnManterPeso).setOnClickListener(v -> selecionar("Manter Peso"));
+        findViewById(R.id.btnComerSaudavel).setOnClickListener(v -> selecionar("Comer Saudável"));
+        findViewById(R.id.btnObjetivo).setOnClickListener(v -> {
+            if (objetivo.isEmpty()) {
                 Toast.makeText(this, "Por favor, selecione um objetivo.", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            // Vai para a próxima tela (ExercicioActivity)
-            Intent intent = new Intent(
-                    QuestionarioPessoalActivity.this,
-                    ExercicioActivity.class
-            );
-
-            intent.putExtra("CHAVE_GENERO", generoRecebido);
-            intent.putExtra("CHAVE_IDADE", idadeRecebida);
-            intent.putExtra("CHAVE_PESO", pesoRecebido);
-            intent.putExtra("CHAVE_ALTURA", alturaRecebida);
-            intent.putExtra("CHAVE_OBJETIVO", objetivoSelecionado);
-
-            startActivity(intent);
+            Intent proximo = new Intent(this, ExercicioActivity.class);
+            Bundle dados = getIntent().getExtras();
+            if (dados != null) {
+                proximo.putExtras(dados);
+            }
+            proximo.putExtra("CHAVE_OBJETIVO", objetivo);
+            startActivity(proximo);
             finish();
         });
     }
-    private transient Button botaoAnterior = null;
 
-    private void destacarBotaoSelecionado(Button botaoAtual) {
-        // Opcional: Aqui podes mudar cores de fundo ou borda para dar feedback visual ao usuário
-        Toast.makeText(this, "Selecionado: " + objetivoSelecionado, Toast.LENGTH_SHORT).show();
+    private void selecionar(String escolha) {
+        objetivo = escolha;
+        Toast.makeText(this, "Selecionado: " + objetivo, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(ESTADO_OBJETIVO, objetivo);
     }
 }

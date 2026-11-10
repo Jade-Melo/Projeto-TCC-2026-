@@ -15,7 +15,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="80dp">
 
         <!-- MENU -->
 
@@ -70,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/search_background"
-        android:hint="⌕ O que você está pesando agora?"
+        android:hint="Buscar alimento"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:singleLine="true"
@@ -80,11 +80,23 @@
         android:inputType="text" />
 
 
-    <!-- ESPAÇO -->
-
-    <Space
+    <TextView
+        android:id="@+id/txtPratoAtual"
         android:layout_width="match_parent"
-        android:layout_height="35dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:accessibilityLiveRegion="polite"
+        android:textColor="#23652B"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txtSemAlimentos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nenhum alimento encontrado"
+        android:textColor="#444444"
+        android:visibility="gone" />
 
 
     <!-- ========================= -->
@@ -98,306 +110,10 @@
         android:scrollbars="none">
 
         <LinearLayout
+            android:id="@+id/listaAlimentos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- ARROZ -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Arroz branco"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/btnArroz"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/plus_outline"
-                    android:gravity="center"
-                    android:text="+"
-                    android:textColor="#588C53"
-                    android:textSize="31sp"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#999999" />
-
-
-            <!-- FEIJÃO -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Feijão cozido"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/btnFeijao"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/plus_outline"
-                    android:gravity="center"
-                    android:text="+"
-                    android:textColor="#588C53"
-                    android:textSize="31sp"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#999999" />
-
-
-            <!-- FRANGO -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Peito de frango"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/btnFrango"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/plus_outline"
-                    android:gravity="center"
-                    android:text="+"
-                    android:textColor="#588C53"
-                    android:textSize="31sp"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#999999" />
-
-
-            <!-- OVO -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Ovo frito"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/btnOvo"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/plus_outline"
-                    android:gravity="center"
-                    android:text="+"
-                    android:textColor="#588C53"
-                    android:textSize="31sp"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#999999" />
-
-
-            <!-- MANGA -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Manga"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/btnManga"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/plus_outline"
-                    android:gravity="center"
-                    android:text="+"
-                    android:textColor="#588C53"
-                    android:textSize="31sp"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#999999" />
-
-
-            <!-- BRÓCOLIS -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Brócolis"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/btnBrocolis"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/plus_outline"
-                    android:gravity="center"
-                    android:text="+"
-                    android:textColor="#588C53"
-                    android:textSize="31sp"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#999999" />
-
-
-            <!-- MANDIOCA -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Mandioca"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/btnMandioca"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/plus_outline"
-                    android:gravity="center"
-                    android:text="+"
-                    android:textColor="#588C53"
-                    android:textSize="31sp"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#999999" />
-
-
-            <!-- BATATA -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Batata cozida"
-                    android:textColor="#111111"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/btnBatata"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:background="@drawable/plus_outline"
-                    android:gravity="center"
-                    android:text="+"
-                    android:textColor="#588C53"
-                    android:textSize="31sp"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#999999" />
-
-        </LinearLayout>
+            android:orientation="vertical" />
 
     </ScrollView>
 
@@ -414,7 +130,8 @@
 
         <TextView
             android:id="@+id/btnTare"
-            android:layout_width="145dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="45dp"
             android:background="@drawable/button_tare"
             android:gravity="center"
@@ -425,12 +142,13 @@
             android:focusable="true" />
 
         <Space
-            android:layout_width="40dp"
+            android:layout_width="12dp"
             android:layout_height="1dp" />
 
         <Button
             android:id="@+id/btnPronto"
-            android:layout_width="145dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="45dp"
             android:background="@drawable/button_pronto"
             android:gravity="center"
