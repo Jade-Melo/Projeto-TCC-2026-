@@ -5,11 +5,22 @@
     <!-- PERMISSÕES BLUETOOTH -->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30" />
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
 
-    <uses-permission android:name="android.permission.INTERNET "/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application
+        android:name=".activites.BalanceApplication"
         android:allowBackup="true"
         android:label="Balance Tech"
         android:supportsRtl="true"
