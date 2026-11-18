@@ -236,8 +236,6 @@
             android:backgroundTint="@color/fundo_botao_principal"
             android:textColor="@color/texto_botao_principal" />
 
-        />
-
     </LinearLayout>
 
 </LinearLayout>
