@@ -38,17 +38,15 @@ public class ConexaoActivity extends AppCompatActivity {
         @Override
         public void run() {
             String status = app.statusAtual();
-            Double peso = app.pesoAtual();
 
             if (app.emSimulacao()) {
-                btnConectar.setText("Simulando: " + (peso == null ? "0 g" : Alimentacao.numero(peso) + " g"));
+                btnConectar.setText("Modo de simulação ativo");
             } else if (status != null && status.startsWith("Conectado")) {
-                String textoPeso = peso == null ? "aguardando..." : Alimentacao.numero(peso) + " g";
-                btnConectar.setText("Conectado (" + textoPeso + ")");
+                btnConectar.setText("Balança conectada");
             } else if (status != null && status.startsWith("Conectando")) {
                 btnConectar.setText("Conectando...");
             } else {
-                btnConectar.setText("Conectar");
+                btnConectar.setText("Conectar balança");
             }
 
             handler.postDelayed(this, 300);
