@@ -35,6 +35,11 @@ final class MetasPerfil {
         }
     }
 
+    /** Id do perfil vinculado e verificado do usuário, ou 0. */
+    static long idPerfilVerificado(Context contexto, int usuarioId) {
+        return perfisVerificados(contexto).getLong(String.valueOf(usuarioId), 0);
+    }
+
     static Double consultarCalorias(Context contexto, int usuarioId) {
         long id = perfisVerificados(contexto).getLong(String.valueOf(usuarioId), 0);
         if (id <= 0) {
@@ -67,9 +72,9 @@ final class MetasPerfil {
                 IntegracaoAlimentacao.Metas extras = integracao == null ? null : integracao.metasAtuais();
                 IntegracaoAlimentacao.Metas metas = calorias == null ? extras
                         : new IntegracaoAlimentacao.Metas(calorias,
-                                extras == null ? 0 : extras.proteina,
-                                extras == null ? 0 : extras.carboidratos,
-                                extras == null ? 0 : extras.gordura);
+                        extras == null ? 0 : extras.proteina,
+                        extras == null ? 0 : extras.carboidratos,
+                        extras == null ? 0 : extras.gordura);
                 resultado.receber(metas);
             });
         });

@@ -15,20 +15,14 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.balancetech_tcc_equipe05.R;
 import com.example.balancetech_tcc_equipe05.activites.classes.Perfil;
+import com.example.balancetech_tcc_equipe05.activites.dominio.CalculoNutricional;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ExercicioActivity extends AppCompatActivity {
     private static final String ESTADO_ATIVIDADE = "atividade";
-    private static final String[] NIVEIS = {
-            "Pouco exercício",
-            "Exercício de 1 a 3 vezes por semana",
-            "Exercício de 4 a 5 vezes por semana",
-            "Exercício de 6 a 7 vezes por semana",
-            "Exercícios intensos diariamente"
-    };
-    private static final double[] FATORES = {1.2, 1.375, 1.55, 1.725, 1.9};
+    private static final String[] NIVEIS = CalculoNutricional.NIVEIS;
 
     private final ExecutorService banco = Executors.newSingleThreadExecutor();
     private int atividade = -1;
@@ -92,19 +86,10 @@ public class ExercicioActivity extends AppCompatActivity {
             return;
         }
 
-        double alturaEmMetros = altura / 100.0;
-        double imc = peso / (alturaEmMetros * alturaEmMetros);
-        double tmb = homem
-                ? 88.362 + 13.397 * peso + 4.799 * altura - 5.677 * idade
-                : 447.593 + 9.247 * peso + 3.098 * altura - 4.330 * idade;
-        double gasto = tmb * FATORES[atividade];
-        double ajuste = 0;
-        if ("Perder Peso".equalsIgnoreCase(objetivo)) {
-            ajuste = -400;
-        } else if ("Ganhar Músculo".equalsIgnoreCase(objetivo)) {
-            ajuste = 400;
-        }
-        double meta = gasto + ajuste;
+        double imc = CalculoNutricional.imc(peso, altura);
+        double tmb = CalculoNutricional.tmb(homem, peso, altura, idade);
+        double gasto = CalculoNutricional.gastoDiario(tmb, atividade);
+        double meta = CalculoNutricional.metaCalorica(gasto, objetivo);
         if (!Alimentacao.positivo(meta) || !Alimentacao.positivo(imc)) {
             Toast.makeText(this, "Confira idade, peso e altura para calcular a meta.",
                     Toast.LENGTH_LONG).show();

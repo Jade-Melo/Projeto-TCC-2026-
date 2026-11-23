@@ -40,6 +40,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.room3.common)
     testImplementation(libs.junit)
+    testImplementation("org.json:json:20240303")
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
 

@@ -5,6 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import com.example.balancetech_tcc_equipe05.activites.dominio.Nutriente;
+import com.example.balancetech_tcc_equipe05.activites.dominio.ResumoDia;
+
+import java.text.NumberFormat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -221,5 +228,63 @@ public class HomeActivity extends AppCompatActivity {
             // Conteúdo sobre massa magra será conectado posteriormente.
 
         });
+    }
+
+    // =========================
+    // RESUMO DO DIA
+    // =========================
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        carregarResumoDoDia();
+    }
+
+    private void carregarResumoDoDia() {
+        final int usuarioId = SessaoUsuario.atual();
+        if (usuarioId <= 0) {
+            return; // sem sessão: mantém os valores de demonstração do layout
+        }
+        NutricaoRepositorio repo = new NutricaoRepositorio(this);
+        repo.executar(
+                () -> repo.resumoDoDia(usuarioId, System.currentTimeMillis()),
+                new NutricaoRepositorio.Resultado<ResumoDia>() {
+                    @Override
+                    public void sucesso(ResumoDia resumo) {
+                        if (!isFinishing() && !isDestroyed() && SessaoUsuario.atual() == usuarioId) {
+                            mostrarResumo(resumo);
+                        }
+                    }
+
+                    @Override
+                    public void erro(Exception erro) {
+                        android.util.Log.e("BalanceTech", "Erro ao carregar o resumo do dia", erro);
+                    }
+                });
+    }
+
+    private void mostrarResumo(ResumoDia r) {
+        NumberFormat inteiro = NumberFormat.getIntegerInstance(Alimentacao.PT_BR);
+        ((TextView) findViewById(R.id.txtCalorias))
+                .setText("Consumir " + inteiro.format(Math.round(r.meta.kcal)) + " Kcal");
+        ((TextView) findViewById(R.id.txtConsumidas))
+                .setText(inteiro.format(Math.round(r.consumido.kcal)) + " Consumidas");
+        barra(R.id.progressCalorias, r.percentual(Nutriente.KCAL));
+
+        macro(R.id.txtCarboidratos, R.id.progressCarbs, r, Nutriente.CARBOIDRATOS);
+        macro(R.id.txtProteina, R.id.progressProteina, r, Nutriente.PROTEINA);
+        macro(R.id.txtGordura, R.id.progressGordura, r, Nutriente.GORDURA);
+    }
+
+    private void macro(int texto, int barra, ResumoDia r, Nutriente n) {
+        ((TextView) findViewById(texto)).setText(
+                Math.round(r.consumido.valor(n)) + "/" + Math.round(r.meta.valor(n)) + "g");
+        barra(barra, r.percentual(n));
+    }
+
+    private void barra(int id, int percentual) {
+        ProgressBar barra = findViewById(id);
+        barra.setMax(100);
+        barra.setProgress(percentual);
     }
 }

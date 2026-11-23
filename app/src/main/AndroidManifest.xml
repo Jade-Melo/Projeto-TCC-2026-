@@ -5,19 +5,21 @@
     <!-- PERMISSÕES BLUETOOTH -->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
     <uses-permission
         android:name="android.permission.BLUETOOTH"
         android:maxSdkVersion="30" />
+
     <uses-permission
         android:name="android.permission.BLUETOOTH_ADMIN"
         android:maxSdkVersion="30" />
+
     <uses-feature
         android:name="android.hardware.bluetooth"
         android:required="false" />
 
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <!-- INTERNET -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".activites.BalanceApplication"
@@ -26,10 +28,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BalanceTech_TCC_Equipe05">
 
-        <!-- ========================= -->
         <!-- SPLASH / TELA INICIAL -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.SplashActivity"
             android:exported="true">
@@ -41,153 +40,93 @@
 
         </activity>
 
-        <!-- ========================= -->
-        <!-- SPLASH / TELA BEM VINDO -->
-        <!-- ========================= -->
-
-        <activity android:name=".activites.BemVindoActivity"
+        <!-- BEM VINDO -->
+        <activity
+            android:name=".activites.BemVindoActivity"
             android:exported="false" />
 
-
-        <!-- ========================= -->
         <!-- LOGIN -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.LoginActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
         <!-- ESQUECEU A SENHA -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.EsqueceuSenhaActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
         <!-- VERIFICAÇÃO -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.VerificacaoActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
         <!-- NOVA SENHA -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.NovaSenhaActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
-        <!-- QUESTIONARIO -->
-        <!-- ========================= -->
-
+        <!-- QUESTIONÁRIO -->
         <activity
             android:name=".activites.QuestionarioActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
-        <!-- QUESTIONARIO PESSOAL -->
-        <!-- ========================= -->
-
+        <!-- QUESTIONÁRIO PESSOAL -->
         <activity
             android:name=".activites.QuestionarioPessoalActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
         <!-- CADASTRO -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.CadastroActivity"
             android:exported="false" />
 
-
-        <!-- ========================= -->
         <!-- HOME -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.HomeActivity"
             android:exported="false" />
 
-
-        <!-- ========================= -->
         <!-- SOBRE NÓS -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.SobreNosActivity"
             android:exported="false" />
 
-
-        <!-- ========================= -->
-        <!-- MENU -->
-        <!-- ========================= -->
-
+        <!-- MENU TRANSPARENTE -->
         <activity
             android:name=".activites.MenuActivity"
             android:exported="false"
-            android:theme="@style/Theme.BalanceTech_TCC_Equipe05" />
+            android:theme="@style/Theme.BalanceTech.Menu" />
 
-
-        <!-- ========================= -->
         <!-- PERFIL -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.PerfilActivity"
             android:exported="false" />
 
-
-        <!-- ========================= -->
         <!-- EXERCÍCIOS -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.ExercicioActivity"
             android:exported="false" />
 
-
-        <!-- ========================= -->
         <!-- CONEXÃO COM A BALANÇA -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.ConexaoActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
-        <!-- REFEIÇÔES -->
-        <!-- ========================= -->
-
+        <!-- REFEIÇÕES -->
         <activity
             android:name=".activites.RefeicoesActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
-        <!-- EVOLUÇÂO -->
-        <!-- ========================= -->
-
+        <!-- EVOLUÇÃO -->
         <activity
             android:name=".activites.EvolucaoActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
         <!-- HISTÓRICO -->
-        <!-- ========================= -->
-
         <activity
             android:name=".activites.HistoricoActivity"
             android:exported="false" />
 
-        <!-- ========================= -->
-        <!-- MONTEPRATO -->
-        <!-- ========================= -->
-
+        <!-- MONTE SEU PRATO -->
         <activity
             android:name=".activites.MontePratoActivity"
             android:exported="false" />
