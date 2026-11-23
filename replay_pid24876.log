@@ -1158,6 +1158,7 @@ instanceKlass com/android/tools/r8/internal/md3
 instanceKlass com/android/tools/r8/internal/i90
 instanceKlass com/android/tools/r8/internal/w90
 instanceKlass com/android/tools/r8/internal/np0
+instanceKlass com/android/tools/r8/internal/np0
 instanceKlass com/android/tools/r8/internal/ff2
 instanceKlass com/android/tools/r8/internal/x91
 instanceKlass com/android/tools/r8/internal/eb

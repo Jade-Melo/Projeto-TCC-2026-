@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "493605051953",
+    "project_id": "balancetech-9c157",
+    "storage_bucket": "balancetech-9c157.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493605051953:android:023404fac0f8c469d83f10",
+        "android_client_info": {
+          "package_name": "com.example.balancetech_tcc_equipe05"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493605051953-1p856vtelurg0g3jpapj3hqmjtjbn0m0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.balancetech_tcc_equipe05",
+            "certificate_hash": "563820d84d38620f71282eb08db732c6a7389f8d"
+          }
+        },
+        {
+          "client_id": "493605051953-qnmkl69e51ljpmpboo1i8esbc392v3a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBChCJM_1ORxMbFlG6Ni-n3K6T6KmYhDqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493605051953-qnmkl69e51ljpmpboo1i8esbc392v3a4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

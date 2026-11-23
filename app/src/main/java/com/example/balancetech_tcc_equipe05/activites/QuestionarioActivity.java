@@ -13,6 +13,7 @@ import com.example.balancetech_tcc_equipe05.R;
 
 public class QuestionarioActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
