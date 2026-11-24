@@ -3,7 +3,10 @@ package com.example.balancetech_tcc_equipe05.activites.classes;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "usuario")
+@Entity(
+        tableName = "usuario",
+        indices = {@androidx.room.Index(value = {"email"}, unique = true)}
+)
 public class Usuario {
 
     @PrimaryKey(autoGenerate = true)
