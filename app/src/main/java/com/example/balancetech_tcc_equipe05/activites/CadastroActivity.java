@@ -79,10 +79,8 @@ public class CadastroActivity extends AppCompatActivity {
             return;
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this,
-                    "Digite um e-mail válido!",
-                    Toast.LENGTH_SHORT).show();
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "Digite um e-mail válido!", Toast.LENGTH_SHORT).show();
             return;
         }
 

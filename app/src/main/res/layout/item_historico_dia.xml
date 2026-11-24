@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Hoje"
+        android:textColor="#222222"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtMetaDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Consumir 0 Kcal"
+        android:textColor="#777777"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/txtConsumidasDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 Consumidas"
+        android:textColor="#222222"
+        android:textSize="13sp" />
+
+    <ProgressBar
+        android:id="@+id/progressDia"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginTop="5dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/progress_green" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <!-- CARBS -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="7dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_historico"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carbs"
+                android:textColor="#222222"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/txtCarbsDia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0/0g"
+                android:textColor="#222222"
+                android:textSize="10sp" />
+
+            <ProgressBar
+                android:id="@+id/progressCarbsDia"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="7dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_red" />
+        </LinearLayout>
+
+        <!-- PROTEÍNA -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_historico"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Proteína"
+                android:textColor="#222222"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/txtProteinaDia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0/0g"
+                android:textColor="#222222"
+                android:textSize="10sp" />
+
+            <ProgressBar
+                android:id="@+id/progressProteinaDia"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="7dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_purple" />
+        </LinearLayout>
+
+        <!-- GORDURA -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_historico"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gordura"
+                android:textColor="#222222"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/txtGorduraDia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0/0g"
+                android:textColor="#222222"
+                android:textSize="10sp" />
+
+            <ProgressBar
+                android:id="@+id/progressGorduraDia"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="7dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_blue" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

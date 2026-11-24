@@ -1,9 +1,29 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.BalanceTech_TCC_Equipe05" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- TEMA PRINCIPAL DO APLICATIVO -->
+    <style
+        name="Base.Theme.BalanceTech_TCC_Equipe05"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
     </style>
 
-    <style name="Theme.BalanceTech_TCC_Equipe05" parent="Base.Theme.BalanceTech_TCC_Equipe05" />
+    <style
+        name="Theme.BalanceTech_TCC_Equipe05"
+        parent="Base.Theme.BalanceTech_TCC_Equipe05" />
+
+    <!-- TEMA TRANSPARENTE DO MENU -->
+    <style
+        name="Theme.BalanceTech.Menu"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+
+    </style>
+
 </resources>

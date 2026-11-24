@@ -6,31 +6,36 @@
     android:layout_height="match_parent"
     android:background="@android:color/transparent">
 
-    <!-- Área fora do menu: tocar aqui fecha o menu -->
+    <!-- FUNDO ESCURECIDO -->
     <View
         android:id="@+id/menuFora"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"
+        android:background="#55000000"
         android:clickable="true"
         android:focusable="true" />
 
-    <!-- Painel do menu -->
+    <!-- PAINEL DO MENU -->
     <ScrollView
         android:id="@+id/painelMenu"
-        android:layout_width= "240dp"
+        android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#FFFFFF"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_menu_painel"
+        android:clipToOutline="true"
+        android:elevation="8dp"
         android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="12dp">
 
-            <!-- CABEÇALHO DO MENU -->
+            <!-- CABEÇALHO -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -65,248 +70,129 @@
             <!-- HOME -->
             <LinearLayout
                 android:id="@+id/menuHome"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/menu_item_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:clickable="true"
-                android:focusable="true">
+                style="@style/MenuItem"
+                android:layout_marginTop="12dp">
 
                 <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
+                    style="@style/MenuIcon"
                     android:src="@drawable/ic_home"
-                    android:scaleType="fitCenter"
                     android:contentDescription="Home" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Home"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    style="@style/MenuText"
+                    android:text="Home" />
 
             </LinearLayout>
 
-            <!-- CONECTE A BALANÇA -->
+            <!-- BALANÇA -->
             <LinearLayout
                 android:id="@+id/menuBalanca"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/menu_item_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:clickable="true"
-                android:focusable="true">
+                style="@style/MenuItem">
 
                 <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
+                    style="@style/MenuIcon"
                     android:src="@drawable/ic_balanca"
-                    android:scaleType="fitCenter"
                     android:contentDescription="Conecte a balança" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Conecte a balança"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    style="@style/MenuText"
+                    android:text="Conecte a balança" />
 
             </LinearLayout>
 
             <!-- MONTE SEU PRATO -->
             <LinearLayout
                 android:id="@+id/menuMontePrato"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/menu_item_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:clickable="true"
-                android:focusable="true">
+                style="@style/MenuItem">
 
                 <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
+                    style="@style/MenuIcon"
                     android:src="@drawable/ic_monte_prato"
-                    android:scaleType="fitCenter"
                     android:contentDescription="Monte seu prato" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Monte seu prato"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    style="@style/MenuText"
+                    android:text="Monte seu prato" />
 
             </LinearLayout>
 
             <!-- REFEIÇÕES -->
             <LinearLayout
                 android:id="@+id/menuRefeicoes"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/menu_item_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:clickable="true"
-                android:focusable="true">
+                style="@style/MenuItem">
 
                 <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
+                    style="@style/MenuIcon"
                     android:src="@drawable/ic_refeicoes"
-                    android:scaleType="fitCenter"
                     android:contentDescription="Refeições" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Refeições"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    style="@style/MenuText"
+                    android:text="Refeições" />
 
             </LinearLayout>
 
             <!-- HISTÓRICO -->
             <LinearLayout
                 android:id="@+id/menuHistorico"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/menu_item_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:clickable="true"
-                android:focusable="true">
+                style="@style/MenuItem">
 
                 <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
+                    style="@style/MenuIcon"
                     android:src="@drawable/ic_historico"
-                    android:scaleType="fitCenter"
                     android:contentDescription="Histórico" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Histórico"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    style="@style/MenuText"
+                    android:text="Histórico" />
 
             </LinearLayout>
 
             <!-- EVOLUÇÃO -->
             <LinearLayout
                 android:id="@+id/menuEvolucao"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/menu_item_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:clickable="true"
-                android:focusable="true">
+                style="@style/MenuItem">
 
                 <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
+                    style="@style/MenuIcon"
                     android:src="@drawable/ic_evolucao"
-                    android:scaleType="fitCenter"
                     android:contentDescription="Evolução" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Evolução"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    style="@style/MenuText"
+                    android:text="Evolução" />
 
             </LinearLayout>
 
             <!-- PERFIL -->
             <LinearLayout
                 android:id="@+id/menuPerfil"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/menu_item_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:clickable="true"
-                android:focusable="true">
+                style="@style/MenuItem">
 
                 <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
+                    style="@style/MenuIcon"
                     android:src="@drawable/ic_perfil"
-                    android:scaleType="fitCenter"
                     android:contentDescription="Perfil" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Perfil"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    style="@style/MenuText"
+                    android:text="Perfil" />
 
             </LinearLayout>
 
             <!-- SOBRE NÓS -->
             <LinearLayout
                 android:id="@+id/btnSobreNos"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/menu_item_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:clickable="true"
-                android:focusable="true">
+                style="@style/MenuItem">
 
                 <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
+                    style="@style/MenuIcon"
                     android:src="@drawable/ic_sobre_nos"
-                    android:scaleType="fitCenter"
                     android:contentDescription="Sobre nós" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Sobre nós"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    style="@style/MenuText"
+                    android:text="Sobre nós" />
 
             </LinearLayout>
 

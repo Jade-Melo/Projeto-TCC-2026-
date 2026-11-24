@@ -319,6 +319,21 @@ public class GraficoEvolucaoView extends View {
     }
 
     // =========================
+    // DADOS REAIS (SerieEvolucao)
+    // =========================
+
+    public void mostrarSerie(float[] novosValores, String[] novosRotulos,
+                             float novoValorMaximo, String novaUnidade, int cor) {
+        valores = novosValores;
+        dias = novosRotulos;
+        valorMaximo = novoValorMaximo > 0 ? novoValorMaximo : 1f;
+        unidade = novaUnidade;
+        paintLinha.setColor(cor);
+        paintPonto.setColor(cor);
+        invalidate();
+    }
+
+    // =========================
     // ATUALIZAR DADOS
     // =========================
 

@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 @Dao
 public interface UsuarioDAO {
@@ -20,5 +21,10 @@ public interface UsuarioDAO {
 
     @Query("UPDATE usuario SET senha = :novaSenha WHERE email = :email")
     void atualizarSenha(String email, String novaSenha);
-}
 
+    @Query("SELECT * FROM usuario WHERE id = :id LIMIT 1")
+    Usuario buscarPorId(int id);
+
+    @Update
+    int atualizar(Usuario usuario);
+}
